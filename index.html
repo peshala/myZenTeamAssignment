@@ -82,7 +82,7 @@
                 <div class="p-[25px] bg-gradient-to-r from-brandGreen to-brandGreenLite text-white rounded-[6px]">
                     <div class="flex flex-row justify-between">
                         <p>Projects</p>
-                        <a>Create project</a>
+                        <a class="cursor-pointer" onclick="toggleCreateProject()">Create project</a>
                     </div>
                     <div class="text-4xl">
                         42 Projects
@@ -90,20 +90,20 @@
                 </div>
                 <div class="p-[25px] text-textBlue border bg-white border-liteGrey rounded-[6px]">
                     <div class="flex flex-row justify-between">
-                        <p>Projects</p>
-                        <a>Create project</a>
+                        <p>Tasks</p>
+                        <a class="cursor-pointer" onclick="toggleCreateTask()">Create Task</a>
                     </div>
                     <div class="text-4xl">
-                        42 Projects
+                        4245 Tasks
                     </div>
                 </div>
                 <div class="p-[25px] text-textBlue bg-white border border-liteGrey rounded-[6px]">
                     <div class="flex flex-row justify-between">
-                        <p>Projects</p>
-                        <a>Create project</a>
+                        <p>Resources</p>
+                        <a class="cursor-pointer" id="uploadNewDoc">Create Resource </a>
                     </div>
                     <div class="text-4xl">
-                        42 Projects
+                        4284 Resource 
                     </div>
                 </div>
             </div>
@@ -120,21 +120,13 @@
                             </p>
                         </div>
                         <div class="flex flex-row items-start ">
-                            <button type="button"
-                                class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
-                                id="menu-button" aria-expanded="true" aria-haspopup="true">
-                                Options
-                                <!-- Heroicon name: solid/chevron-down -->
-                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                            <button type="button" onclick="toggleCreateProject()"
+                                class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                                Create new project
                             </button>
                             <input
                                 class="ml-3 bg-white appearance-none block w-full text-grey border border-liteGrey rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                id="grid-first-name" type="text" placeholder="Global search">
+                                id="grid-first-name" type="text" placeholder="Search projects">
                         </div>
                     </div>
                     <!-- Recent project grid -->
@@ -237,7 +229,7 @@
                         </a>
 
                         <!-- create new project -->
-                        <div
+                        <div onclick="toggleCreateProject()"
                             class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed flex justify-center items-center cursor-pointer">
                             <div class="flex flex-row items-center">
                                 <img class="w-6 h-auto" src="./assets/images/add.svg" alt="">
@@ -275,17 +267,18 @@
                             </button>
                             <input
                                 class="ml-3 bg-white appearance-none block w-full text-grey border border-liteGrey rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                id="grid-first-name" type="text" placeholder="Global search">
+                                id="grid-first-name" type="text" placeholder="Search documents">
                         </div>
                     </div>
                     <div class="grid lg:grid-cols-8 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-[20px]">
                         <!-- uploaded docuemnt list -->
-                        <a  onclick="toggleUploadedResourcePopup()" class="p-3 flex flex-col items-center justify-center cursor-pointer">
+                        <a onclick="toggleUploadedResourcePopup()"
+                            class="p-3 flex flex-col items-center justify-center cursor-pointer">
                             <img class="w-[60px] text-center" src="./assets/images/doc.png" alt="">
                             <p class="text-base text-textBlue text-center mt-[5px] font-semibold">GDPR Guidelines final
                                 copy</p>
                             <span class="text-grey text-xs mt-[5px]">2 hours ago</span>
-                            </a>
+                        </a>
                         <!-- ./uploaded docuemnt list -->
                         <!-- create new project -->
                         <div id="uploadNewDoc"
@@ -312,13 +305,13 @@
                         </p>
                     </div>
                     <div class="flex flex-row items-start ">
-                        <button type="button"
+                        <button type="button" onclick="toggleCreateTask()"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
                             Create new task
                         </button>
                         <input
                             class="ml-3 bg-white appearance-none block w-full text-grey border border-liteGrey rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="grid-first-name" type="text" placeholder="Global search">
+                            id="grid-first-name" type="text" placeholder="Search tasks">
                     </div>
                 </div>
                 <div class="grid gap-4 mt-[20px] lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
@@ -357,7 +350,7 @@
                     </div>
                     <!-- task item -->
                     <!-- create new task -->
-                    <div
+                    <div onclick="toggleCreateTask()"
                         class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed flex justify-center items-center cursor-pointer">
                         <div class="flex flex-col items-center">
                             <img class="w-6 h-auto" src="./assets/images/add.svg" alt="">
@@ -380,13 +373,13 @@
                         </p>
                     </div>
                     <div class="flex flex-row items-start ">
-                        <button type="button"
+                        <button type="button" onclick="toggleCreateCluster()"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
                             Create new cluster
                         </button>
                         <input
                             class="ml-3 bg-white appearance-none block w-full text-grey border border-liteGrey rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="grid-first-name" type="text" placeholder="Global search">
+                            id="grid-first-name" type="text" placeholder="Search clusters">
                     </div>
                 </div>
                 <div class="grid gap-4 mt-[20px] lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
@@ -409,7 +402,7 @@
                     </a>
                     <!-- ./cluster item -->
                     <!-- create new cluster -->
-                    <div
+                    <div onclick="toggleCreateCluster()"
                         class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed flex justify-center items-center cursor-pointer">
                         <div class="flex flex-col items-center">
                             <img class="w-6 h-auto" src="./assets/images/add.svg" alt="">
@@ -431,7 +424,7 @@
                     <div class="flex flex-row items-start ">
                         <input
                             class="ml-3 bg-white appearance-none block w-full text-grey border border-liteGrey rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="grid-first-name" type="text" placeholder="Global search">
+                            id="grid-first-name" type="text" placeholder="Search resources">
                     </div>
                 </div>
                 <div class="mt-[20px]">
@@ -679,19 +672,234 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
-                        <button type="button"
+                        <button type="button" id="uploadDocumentModalInside"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
                             Cancel
                         </button>
-                        <button type="button"
+                        <button type="button" id="uploadDocumentModalInside"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
-                            Upload resouce
+                            Upload resource
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- ./file uploader popup -->
+
+
+        <!-- create task popup -->
+        <div class="bg-black bg-opacity-50 fixed inset-0 hidden justify-center items-center z-20"
+            id="overlay-createTask">
+            <div class="bg-white p-10 rounded-[6px] p-10 relative w-2/5" id="uploadDocumentModalInside">
+                <div class="flex justify-between items-center">
+                    <h4 class="text-3xl text-textBlue font-bold">Create task</h4>
+                    <svg onclick="toggleCreateTask()" id="uploadDocClose"
+                        class="absolute top-4 right-4 h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="mt-[20px]">
+                    <div class="flex flex-col items-start">
+                        <label class="text-xs" for="filename">Task name</label>
+                        <input id="filename" type="text" placeholder="Name"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+
+                    <div class="flex flex-col items-start mt-[10px]">
+                        <label class="text-xs" for="description">Task description</label>
+                        <input id="description" type="text" placeholder="Description"
+                            class="flex items-start justify-start h-[70px] mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+                </div>
+
+                <div class="mt-[20px]">
+                    <p class="text-left text-base text-lg font-bold">Select the project and a resource cluster if there
+                        is any created</p>
+                    <div class="mt-[20px]">
+                        <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                            <button type="button"
+                                class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
+                                id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                Cluster
+                                <!-- Heroicon name: solid/chevron-down -->
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <button type="button"
+                                class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
+                                id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                Task
+                                <!-- Heroicon name: solid/chevron-down -->
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start mt-[20px]">
+                        <input id="filename" type="text" placeholder="Assign to user"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-5 mb-3 leading-tight focus:outline-none focus:bg-white">
+                        <div class="flex flex-row flex-wrap">
+                            <div class="rounded-full flex items-center bg-litegray pr-4">
+                                <img class="inline-block h-8 w-8 rounded-full" src="./assets/images/avatar.png" alt="">
+                                <p class="ml-3 text-textBlue">Clair blair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
+                        <button type="button" onclick="toggleCreateTask()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
+                            Cancel
+                        </button>
+                        <button type="button" onclick="toggleCreateTask()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                            Create task
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./create task popup -->
+
+        <!-- create cluster popup -->
+        <div class="bg-black bg-opacity-50 fixed inset-0 hidden justify-center items-center z-20"
+            id="overlay-createCluster">
+            <div class="bg-white p-10 rounded-[6px] p-10 relative w-2/5" id="uploadDocumentModalInside">
+                <div class="flex justify-between items-center">
+                    <h4 class="text-3xl text-textBlue font-bold">Create new cluster</h4>
+                    <svg onclick="toggleCreateCluster()" 
+                        class="absolute top-4 right-4 h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="mt-[20px]">
+                    <div class="flex flex-col items-start">
+                        <label class="text-xs" for="filename">Cluster name</label>
+                        <input id="filename" type="text" placeholder="Name"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+
+                    <div class="flex flex-col items-start mt-[10px]">
+                        <label class="text-xs" for="description">Cluster description</label>
+                        <input id="description" type="text" placeholder="Description"
+                            class="flex items-start justify-start h-[70px] mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+                </div>
+
+                <div class="mt-[20px]">
+                    <p class="text-left text-base text-lg font-bold">Select the project if you would like to attach this cluster to a project</p>
+                    <div class="mt-[20px]">
+                        <div class="">
+                            <button type="button"
+                                class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
+                                id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                Cluster
+                                <!-- Heroicon name: solid/chevron-down -->
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start mt-[20px]">
+                        <input id="filename" type="text" placeholder="Assign to user"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-5 mb-3 leading-tight focus:outline-none focus:bg-white">
+                        <div class="flex flex-row flex-wrap">
+                            <div class="rounded-full flex items-center bg-litegray pr-4">
+                                <img class="inline-block h-8 w-8 rounded-full" src="./assets/images/avatar.png" alt="">
+                                <p class="ml-3 text-textBlue">Clair blair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
+                        <button type="button" onclick="toggleCreateCluster()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
+                            Cancel
+                        </button>
+                        <button type="button" onclick="toggleCreateCluster()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                            Create task
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./create cluster popup -->
+
+        <!-- create project popup popup -->
+        <div class="bg-black bg-opacity-50 fixed inset-0 hidden justify-center items-center z-20"
+            id="overlay-createNewProject">
+            <div class="bg-white p-10 rounded-[6px] p-10 relative w-2/5" id="uploadDocumentModalInside">
+                <div class="flex justify-between items-center">
+                    <h4 class="text-3xl text-textBlue font-bold">Create new project</h4>
+                    <svg onclick="toggleCreateProject()"
+                        class="absolute top-4 right-4 h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="mt-[20px]">
+                    <div class="flex flex-col items-start">
+                        <label class="text-xs" for="filename">Project Name</label>
+                        <input id="filename" type="text" placeholder="name"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+
+                    <div class="flex flex-col items-start mt-[10px]">
+                        <label class="text-xs" for="description">File description</label>
+                        <input id="description" type="text" placeholder="Description"
+                            class="flex items-start justify-start h-[70px] mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    </div>
+                </div>
+
+                <div class="mt-[20px]">
+                    <p class="text-left text-base text-lg font-bold">Select who you would like to include in this
+                        project</p>
+                    <div class="flex flex-col items-start mt-[20px]">
+                        <input id="filename" type="text" placeholder="Assign to user"
+                            class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-5 mb-3 leading-tight focus:outline-none focus:bg-white">
+                        <div class="flex flex-row flex-wrap">
+                            <div class="rounded-full flex items-center bg-litegray pr-4">
+                                <img class="inline-block h-8 w-8 rounded-full" src="./assets/images/avatar.png" alt="">
+                                <p class="ml-3 text-textBlue">Clair blair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
+                        <button type="button" onclick="toggleCreateProject()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
+                            Cancel
+                        </button>
+                        <button type="button" onclick="toggleCreateProject()"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                            Create new project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./create project popup -->
 
         <!-- display file popup -->
         <div class="bg-black bg-opacity-50 fixed hidden inset-0 justify-center items-center z-20"
@@ -710,7 +918,8 @@
 
 
                 <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[20px]">
-                    <div class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed cursor-pointer rounded-[6px]">
+                    <div
+                        class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed cursor-pointer rounded-[6px]">
                         <div class="flex items-start">
                             <div>
                                 <span class="text-sm text-grey">File size</span>
@@ -722,10 +931,10 @@
                                     <img class=" h-5 text-center" src="./assets/images/pdf.png" alt="">
                                     <p class="text-lg text-textBlue font-bold ml-2">PDF file</p>
                                 </div>
-                        
+
                             </div>
                         </div>
-                        
+
                         <div class="mt-6">
                             <img src="./assets/images/sample.png" alt="">
                         </div>
@@ -793,20 +1002,20 @@
                     </div>
                 </div>
                 <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
-                    
+
                     <div class="flex items-center justify-start">
                         <img src="./assets/images/download.svg" alt="">
                         <a href="" class="text-brandGreen ml-3">Download file</a>
                     </div>
                     <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
                         <button type="button"
-                        class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
-                        Delete
-                    </button>
-                    <button type="button"
-                        class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
-                        Repload resouce
-                    </button>
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
+                            Delete
+                        </button>
+                        <button type="button"
+                            class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                            Repload resouce
+                        </button>
                     </div>
                 </div>
             </div>
@@ -819,10 +1028,32 @@
 
 <script>
     const overlayTask = document.querySelector('#overlay-uploadedRes');
+    const overlayCreateProject = document.querySelector('#overlay-createNewProject');
+    const overlayCreateTask = document.querySelector('#overlay-createTask');
+    const overlayCreateCluster = document.querySelector('#overlay-createCluster');
+
     const toggleUploadedResourcePopup = () => {
         overlayTask.classList.toggle('flex');
         overlayTask.classList.toggle('hidden');
     }
+    const toggleCreateProject = () => {
+        overlayCreateProject.classList.toggle('flex');
+        overlayCreateProject.classList.toggle('hidden');
+    }
+
+    const toggleCreateTask = () => {
+        overlayCreateTask.classList.toggle('flex');
+        overlayCreateTask.classList.toggle('hidden');
+    }
+
+    const toggleCreateCluster = () => {
+        overlayCreateCluster.classList.toggle('flex');
+        overlayCreateCluster.classList.toggle('hidden');
+    }
+
+
+
+
 </script>
 
 </html>

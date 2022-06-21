@@ -104,7 +104,7 @@
                     </a>
                     <a href="./adminProjectView-docs.html"
                     class="mr-[30px]  h-auto flex items-center justify-center  rounded-[6px] py-4 px-6 bg-brandGreen bg-gray-50 text-md font-medium text-white">
-                    Resources
+                    Attachments
                 </a>
                     <a 
                         class="mr-[30px]  h-auto flex items-center justify-center  rounded-[6px] py-4 px-6 bg-gray-50 text-md font-medium text-textBlue">
@@ -114,36 +114,36 @@
                 </div>
                 <div class="grid lg:grid-cols-8 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-[20px]">
                     <!-- uploaded docuemnt list -->
-                    <div class="p-3 flex flex-col items-center justify-center cursor-pointer">
-                        <img class="w-[60px] text-center" src="./assets/images/doc.png" alt="">
+                    <a onclick="toggleUploadedResourcePopup()" class="p-3 flex flex-col items-center justify-center cursor-pointer">
+                        <img class="w-[60px] text-center" src="./assets/images/html.svg" alt="">
                         <p class="text-base text-textBlue text-center mt-[5px] font-semibold">GDPR Guidelines final
                             copy</p>
                         <span class="text-grey text-xs mt-[5px]">2 hours ago</span>
-                    </div>
+                    </a>
                     <!-- ./uploaded docuemnt list -->
                     <!-- uploaded docuemnt list -->
-                    <div class="p-3 flex flex-col items-center justify-center cursor-pointer">
-                        <img class="w-[60px] text-center" src="./assets/images/xls.png" alt="">
+                    <a onclick="toggleUploadedResourcePopup()" class="p-3 flex flex-col items-center justify-center cursor-pointer">
+                        <img class="w-[60px] text-center" src="./assets/images/png.svg" alt="">
                         <p class="text-base text-textBlue text-center mt-[5px] font-semibold">GDPR Guidelines final
                             copy</p>
                         <span class="text-grey text-xs mt-[5px]">2 hours ago</span>
-                    </div>
+                    </a>
                     <!-- ./uploaded docuemnt list -->
                     <!-- uploaded docuemnt list -->
-                    <div class="p-3 flex flex-col items-center justify-center cursor-pointer">
+                    <a onclick="toggleUploadedResourcePopup()" class="p-3 flex flex-col items-center justify-center cursor-pointer">
                         <img class="w-[60px] text-center" src="./assets/images/pdf.png" alt="">
                         <p class="text-base text-textBlue text-center mt-[5px] font-semibold">GDPR Guidelines final
                             copy</p>
                         <span class="text-grey text-xs mt-[5px]">2 hours ago</span>
-                    </div>
+                    </a>
                     <!-- ./uploaded docuemnt list -->
                     <!-- uploaded docuemnt list -->
-                    <div class="p-3 flex flex-col items-center justify-center cursor-pointer">
+                    <a onclick="toggleUploadedResourcePopup()" class="p-3 flex flex-col items-center justify-center cursor-pointer">
                         <img class="w-[60px] text-center" src="./assets/images/doc.png" alt="">
                         <p class="text-base text-textBlue text-center mt-[5px] font-semibold">GDPR Guidelines final
                             copy</p>
                         <span class="text-grey text-xs mt-[5px]">2 hours ago</span>
-                    </div>
+                    </a>
                     <!-- ./uploaded docuemnt list -->
                     <!-- create new doc -->
                     <div onclick="toggleuploadDOcDisplay()"
@@ -213,7 +213,7 @@
                     </p>
                     <div class="flex flex-row justify-between mt-[12px]">
                         <div class="flex flex-row items-start">
-                            <img class="w-[60px] text-center" src="./assets/images/doc.png" alt="">
+                            <img class="w-[60px] text-center" src="./assets/images/html.svg" alt="">
                             <div class="ml-4">
                                 <p class="text-textBlue text-lg font-bold">
                                     GDPR Guidelines
@@ -370,6 +370,125 @@
             </div>
         </div>
         <!-- ./task popup -->
+          <!-- display file popup -->
+          <div class="bg-black bg-opacity-50 fixed hidden inset-0 justify-center items-center z-20"
+          id="overlay-uploadedRes">
+          <div class="bg-white p-10 rounded-[6px] p-10 relative w-1/2" id="uploadDocumentModalInside">
+              <div class="flex justify-between items-center">
+                  <h4 class="text-3xl text-textBlue font-bold">Uploaded resource</h4>
+                  <svg onclick="toggleUploadedResourcePopup()" id="uploadDocClose"
+                      class="absolute top-4 right-4 h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                      id="close-modal" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                  </svg>
+              </div>
+
+
+              <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[20px]">
+                  <div class="p-[25px] rounded-[6px] bg-liteGrey/[0.2] border border-liteGrey border-dashed cursor-pointer rounded-[6px]">
+                      <div class="flex items-start">
+                          <div>
+                              <span class="text-sm text-grey">File size</span>
+                              <p class="text-lg text-textBlue font-bold">1.5mb</p>
+                          </div>
+                          <div class="ml-5">
+                              <span class="text-sm text-grey">File size</span>
+                              <div class="flex items-center">
+                                  <img class=" h-5 text-center" src="./assets/images/pdf.png" alt="">
+                                  <p class="text-lg text-textBlue font-bold ml-2">PDF file</p>
+                              </div>
+                      
+                          </div>
+                      </div>
+                      
+                      <div class="mt-6">
+                          <img src="./assets/images/sample.png" alt="">
+                      </div>
+                  </div>
+                  <div>
+
+                      <div class="mt-[20px]">
+                          <div class="flex flex-col items-start">
+                              <label class="text-xs" for="filename">File name</label>
+                              <input id="filename" type="text" placeholder="file name"
+                                  class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                          </div>
+
+                          <div class="flex flex-col items-start mt-[10px]">
+                              <label class="text-xs" for="description">File description</label>
+                              <input id="description" type="text" placeholder="Description"
+                                  class="flex items-start justify-start h-[70px] mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                          </div>
+                      </div>
+
+                      <div class="mt-[20px]">
+                          <p class="text-left text-base text-lg font-bold">Select the cluster, asignee and task</p>
+                          <p class="mt-1 text-left text-grey text-md">except the cluster the others are optional </p>
+
+                          <div class="mt-[20px]">
+                              <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                                  <button type="button"
+                                      class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
+                                      id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                      Cluster
+                                      <!-- Heroicon name: solid/chevron-down -->
+                                      <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                          <path fill-rule="evenodd"
+                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                              clip-rule="evenodd" />
+                                      </svg>
+                                  </button>
+                                  <button type="button"
+                                      class="h-auto inline-flex justify-between w-full rounded-md border border-grey px-6 py-4 bg-white text-sm font-medium text-textBlue hover:bg-gray-50 focus:outline-none"
+                                      id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                      Task
+                                      <!-- Heroicon name: solid/chevron-down -->
+                                      <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                          <path fill-rule="evenodd"
+                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                              clip-rule="evenodd" />
+                                      </svg>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="flex flex-col items-start mt-[20px]">
+                              <input id="filename" type="text" placeholder="Assign to user"
+                                  class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-5 mb-3 leading-tight focus:outline-none focus:bg-white">
+                              <div class="flex flex-row flex-wrap">
+                                  <div class="rounded-full flex items-center bg-litegray pr-4">
+                                      <img class="inline-block h-8 w-8 rounded-full" src="./assets/images/avatar.png"
+                                          alt="">
+                                      <p class="ml-3 text-textBlue">Clair blair</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-[25px]">
+                  
+                  <div class="flex items-center justify-start">
+                      <img src="./assets/images/download.svg" alt="">
+                      <a href="" class="text-brandGreen ml-3">Download file</a>
+                  </div>
+                  <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                      <button type="button"
+                      class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
+                      Delete
+                  </button>
+                  <button type="button"
+                      class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
+                      Repload resouce
+                  </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- ./display file popup -->
     </div>
     <!-- content section -->
     </div>
@@ -377,6 +496,8 @@
 <script>
     const overlayTask = document.querySelector('#overlay-task');
     const overlayUpload = document.querySelector('#overlay-uploadDocument');
+    const overlayDisplayDoc = document.querySelector('#overlay-uploadedRes');
+
     const toggleTaskDisplay = () => {
         overlayTask.classList.toggle('flex');
         overlayTask.classList.toggle('hidden');
@@ -385,6 +506,10 @@
     const toggleuploadDOcDisplay = () => {
         overlayUpload.classList.toggle('flex');
         overlayUpload.classList.toggle('hidden');
+    }
+    const toggleUploadedResourcePopup = () => {
+        overlayDisplayDoc.classList.toggle('flex');
+        overlayDisplayDoc.classList.toggle('hidden');
     }
 
 </script>
