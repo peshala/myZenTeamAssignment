@@ -19,6 +19,7 @@ module.exports = {
         'brandGreen': '#19A3BB',
         'brandGreenLite': '#6AEEAC',
         'red': '#EB5757',
+        'liteButton': '#F3F4F6',
       },
     },
 
