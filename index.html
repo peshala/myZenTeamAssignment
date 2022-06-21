@@ -944,14 +944,14 @@
                         <div class="mt-[20px]">
                             <div class="flex flex-col items-start">
                                 <label class="text-xs" for="filename">File name</label>
-                                <input id="filename" type="text" placeholder="file name"
-                                    class="mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                                <input id="filename" type="text" placeholder="file name" value="company invoice V2.5"
+                                    class="mt-2 form-input bg-white appearance-none block w-full text-textBlue border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                             </div>
 
                             <div class="flex flex-col items-start mt-[10px]">
                                 <label class="text-xs" for="description">File description</label>
-                                <input id="description" type="text" placeholder="Description"
-                                    class="flex items-start justify-start h-[70px] mt-2 form-input bg-white appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                                <input id="description" type="text" placeholder="Description" value="Sed ut perspiciatis unde omnis iste natus error sit voluptatem , "
+                                    class="flex items-start justify-start h-[70px] mt-2 form-input bg-textBlue appearance-none block w-full text-grey border border-liteGrey rounded-[6px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                             </div>
                         </div>
 
@@ -1008,11 +1008,11 @@
                         <a href="" class="text-brandGreen ml-3">Download file</a>
                     </div>
                     <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                        <button type="button"
+                        <button type="button" onclick="toggleUploadedResourcePopup()"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-red text-md font-medium text-white">
                             Delete
                         </button>
-                        <button type="button"
+                        <button type="button" onclick="toggleUploadedResourcePopup()"
                             class="h-auto flex items-center justify-center w-full rounded-[6px]  py-4 px-6 bg-brandGreen text-md font-medium text-white">
                             Repload resouce
                         </button>
